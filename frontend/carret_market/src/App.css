@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.HeaderBar {
+  max-width: 120rem;
+  height: 6.4rem;
+  background-color: blue;
+}
