@@ -2,17 +2,48 @@ body {
   /* overflow: hidden; */
 }
 
+/*App.js*/
 .App {
   text-align: center;
   height: 100%;
 }
 
-.HeaderBar {
-  max-width: 120rem;
-  height: 6.4rem;
-  background-color: blue;
+/*Headers.js*/
+header {
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;  
 }
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+nav ul li a:hover {
+  color: #ff6f0f;
+}
+
+.activeLink {
+  color: #ff6f0f; /* 원하는 활성 링크 컬러 값으로 변경 */
+}
+
+
+/*MarketPlace.js*/
 .MarketPlaceContainer {
   background: #F8F9FA;
   min-height: 100vh;

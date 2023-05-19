@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../App.css';
 
 function Headers() {
+
+  const location = useLocation();
+
   return (
     <header>
       <nav>
         <ul>
           <li>
-            <NavLink exact to="/" activeClassName="active">당근마켓</NavLink>
+           <NavLink exact="true" to="/"><img style={{width:'130px'}} src='https://dnvefa72aowie.cloudfront.net/karrot-cs/etc/202007/0cf1d10235c37b2635c02719125da37cc1bd632518198b1e1da7f5a364156540.png'></img></NavLink>
           </li>
           <li>
-            <NavLink exact to="/" activeClassName="active">중고거래</NavLink>
+            <NavLink exact="true" to="/" className={location.pathname === '/' ? 'activeLink' : ''} style={{lineHeight:'2.32'}}>중고거래</NavLink>
           </li>
           <li>
-            <NavLink to="/neighborhoodMarket" activeClassName="active">동네가게</NavLink>
+            <NavLink exact="true" to="/neighborhoodMarket" className={location.pathname === '/neighborhoodMarket' ? 'activeLink' : ''} style={{lineHeight:'2.32'}}>동네가게</NavLink>
           </li>
         </ul>
       </nav>

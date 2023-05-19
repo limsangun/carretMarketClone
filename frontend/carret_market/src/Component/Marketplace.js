@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Card, NavLink } from 'react-bootstrap';
+import { Card, NavLink } from 'react-bootstrap';
 
 function Marketplace() {
   return (
@@ -85,7 +85,7 @@ function Marketplace() {
           </Card>
         </div>
 
-        <h5 style={{textAlign:'center', marginTop:'50px'}}><NavLink exact to="/" activeClassName="active">인기매물 더 보기</NavLink></h5>
+        {/* <h5 style={{textAlign:'center', marginTop:'50px'}}><NavLink exact="true" to="/" activeclassname="active">인기매물 더 보기</NavLink></h5> */}
       </div>
     </div>
   );
