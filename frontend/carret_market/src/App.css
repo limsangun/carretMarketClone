@@ -1,9 +1,21 @@
+body {
+  /* overflow: hidden; */
+}
+
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .HeaderBar {
   max-width: 120rem;
   height: 6.4rem;
   background-color: blue;
+}
+
+.MarketPlaceContainer {
+  background: #F8F9FA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

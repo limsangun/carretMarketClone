@@ -9,10 +9,13 @@ function Headers() {
       <nav>
         <ul>
           <li>
-            <NavLink exact to="/" activeClassName="active">홈</NavLink>
+            <NavLink exact to="/" activeClassName="active">당근마켓</NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeClassName="active">소개</NavLink>
+            <NavLink exact to="/" activeClassName="active">중고거래</NavLink>
+          </li>
+          <li>
+            <NavLink to="/neighborhoodMarket" activeClassName="active">동네가게</NavLink>
           </li>
         </ul>
       </nav>
