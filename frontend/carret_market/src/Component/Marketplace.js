@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, NavLink } from 'react-bootstrap';
 
 function Marketplace() {
+
   return (
     <div className='MarketPlaceContainer'>
       <div className="container">
