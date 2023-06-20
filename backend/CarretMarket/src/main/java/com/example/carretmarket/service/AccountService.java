@@ -34,11 +34,10 @@ public class AccountService {
     public GlobalResDto signup(AccountReqDto accountReqDto) {
         // nickname 중복검사
         if(accountRepository.findByEmail(accountReqDto.getEmail()).isPresent()){
-            throw new RuntimeException("Overlap Check");
+            throw new RuntimeException("이미 존재하는 아이디입니다.");
         }
-        
-        if(accountReqDto.getPw() != accountReqDto.getPwck()) {
-        	throw new RuntimeException("passWord Check");
+        if(!accountReqDto.getPw().equals(accountReqDto.getPwck())) {
+        	throw new RuntimeException("비밀번호를 확인해주세요");
         }
         
         // 패스워드 암호화
@@ -55,12 +54,12 @@ public class AccountService {
         
         // 아이디 검사
         Account account = accountRepository.findByEmail(loginReqDto.getEmail()).orElseThrow(
-                () -> new RuntimeException("Not found Account")
+                () -> new RuntimeException("존재하지 않는 아이디입니다.")
         );
         
         // 비밀번호 검사
         if(!passwordEncoder.matches(loginReqDto.getPassword(), account.getPw())) {
-            throw new RuntimeException("Not matches Password");
+            throw new RuntimeException("비밀번호를 확인해주세요.");
         }
         
         // 아이디 정보로 Token생성
@@ -77,7 +76,7 @@ public class AccountService {
             RefreshToken newToken = new RefreshToken(tokenDto.getRefreshToken(), loginReqDto.getEmail());
             refreshTokenRepository.save(newToken);
         }
-        
+        response.setHeader("Authorization2", tokenDto.getAccessToken());
         // response 헤더에 Access Token / Refresh Token 넣음
         setHeader(response, tokenDto);
         return new GlobalResDto("Success Login", HttpStatus.OK.value());

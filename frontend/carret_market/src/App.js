@@ -7,12 +7,13 @@ import NeighborhoodMarket from './Component/NeighborhoodMarket';
 import Login from './Component/Login';
 import Register from './Component/Register';
 import PrivateRoutes from './Component/PrivateRoutes';
+import ToastContainer from './Component/ToastContainer';
 
 function App() {
   return (
-    <Router>
+    <Router>      
       <Headers />
-      <Routes>
+      <Routes>        
         <Route path="/" element={<Marketplace />} />
         <Route path="/neighborhoodMarket" element={<NeighborhoodMarket />} />
         <Route path="/login" element={<Login />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path="/neighborhoodMarket" element={<NeighborhoodMarket />} />
         </Route> */}
       </Routes>
+      <ToastContainer />
     </Router>
   );
 }

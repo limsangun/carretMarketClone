@@ -30,12 +30,12 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.cors();
-        http.csrf().disable();
-
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-        http.authorizeRequests().antMatchers("/api/account/**").permitAll()
+    	http.cors().and()
+		        .csrf().disable()
+		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		        .and()
+		        .authorizeRequests()
+		        .antMatchers("/api/account/**").permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(new JwtAuthFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
