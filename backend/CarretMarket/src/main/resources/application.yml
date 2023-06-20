@@ -1,6 +1,6 @@
 
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /
     encoding:
@@ -13,12 +13,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/carretMarket?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: root1234
+    password: 1234
 
   jpa:
     open-in-view: true   #view ??? ??? open?
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
@@ -29,5 +29,5 @@ spring:
       password: 1234
 
 jwt:
-  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
+  secret-key: 7J2064W467Kg7J207IWY7Lqg7ZSE7IiY6rCV7IOd67aE65Ok7ZmU7J207YyF7ZWY7IS47JqU7KKL7J2A7ZqM7IKs7JeQ66qo65GQ7Leo7JeF7ISx6rO17ZWY7Iuk6rGw652866+/7Iq164uI64uk65287J2067iM7IS47IWY65Ok7Ja07KO87IWU7ISc6rCQ7IKs7ZWp64uI64uk64+E7JuA7J2065CY7JeI7Jy866m07KKL6rKg7Iq164uI64uk
 
