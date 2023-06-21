@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class AccountController {
 
 	private final AccountService accountService;
-	
+
 	// 회원가입
     @PostMapping("/join")
     public GlobalResDto join(@RequestBody AccountReqDto accountReqDto) {

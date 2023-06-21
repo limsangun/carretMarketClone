@@ -76,7 +76,6 @@ public class AccountService {
             RefreshToken newToken = new RefreshToken(tokenDto.getRefreshToken(), loginReqDto.getEmail());
             refreshTokenRepository.save(newToken);
         }
-        response.setHeader("Authorization2", tokenDto.getAccessToken());
         // response 헤더에 Access Token / Refresh Token 넣음
         setHeader(response, tokenDto);
         return new GlobalResDto("Success Login", HttpStatus.OK.value());

@@ -7,7 +7,9 @@ import NeighborhoodMarket from './Component/NeighborhoodMarket';
 import Login from './Component/Login';
 import Register from './Component/Register';
 import PrivateRoutes from './Component/PrivateRoutes';
-import ToastContainer from './Component/ToastContainer';
+import ToastContainer from './Component/Toast';
+import Counter from './Component/Counter';
+import CounterContainers from './Containers/CounterContainers';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         {/* <Route element={<PrivateRoutes />}>
           <Route path="/neighborhoodMarket" element={<NeighborhoodMarket />} />
         </Route> */}
+        <Route path="/counter" element={<Counter />} />          
+        <Route path="/counter2" element={<CounterContainers />} />   
       </Routes>
       <ToastContainer />
     </Router>
